@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <script src="https://kit.fontawesome.com/761c0af663.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>The Tips Calc</title>
+  </head>
+  <body>
+    <div class="container">
+      <span class="brandText">TIPS CALC</span>
+      <div class="section">
+        <div class="fields">
+          <div class="panel">
+            <label for="billAmount"
+              >Bill
+              <span id="billAmountError" class="hide errorHelpText"
+                ><i class="fas fa-exclamation-triangle"></i> Can't be zero</span
+              ></label
+            >
+
+            <input
+              class="textInput"
+              id="billAmount"
+              type="number"
+              placeholder="0"
+              onkeyup="numValidate(this)"
+            />
+            <i class="fas fa-rupee-sign icon"></i>
+          </div>
+          <div class="panel">
+            <label for="peopleCount"
+              >Number of People
+              <span id="peopleCountError" class="hide errorHelpText"
+                ><i class="fas fa-exclamation-triangle"></i> Can't be zero</span
+              ></label
+            >
+            <input
+              class="textInput"
+              id="peopleCount"
+              type="number"
+              placeholder="0"
+              onkeyup="numValidate(this)"
+            />
+            <i class="fas fa-user icon"></i>
+          </div>
+          <div class="panel">
+            <span class="label">Select Tip %</span>
+            <div class="mutipleInputPanel">
+              <button id="tip5" onclick="calculate(5)" class="buttonInput">5%</button>
+              <button id="tip10" onclick="calculate(10)" class="buttonInput">10%</button>
+              <button id="tip15" onclick="calculate(15)" class="buttonInput">15%</button>
+              <button id="tip20" onclick="calculate(20)" class="buttonInput">20%</button>
+              <button id="tip25" onclick="calculate(25)" class="buttonInput">25%</button>
+              <input
+                id="tipCustom"
+                onkeyup="calculate(this.value)"
+                type="number"
+                class="textInput"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="result">
+          <div class="outputPanel">
+            <label for="tipAmount" class="outputLabel">Tip Amount</label>
+            <output class="outputText"
+              ><i class="fas fa-rupee-sign outputIcon"></i>
+              <span id="tipAmount">0.00</span>
+            </output>
+            <span class="outputLabelHelper">/ person</span>
+          </div>
+          <div class="outputPanel">
+            <label for="totalAmount" class="outputLabel">Total Amount</label>
+            <output class="outputText"
+              ><i class="fas fa-rupee-sign outputIcon"></i>
+              <span id="totalAmount">0.00</span></output
+            >
+            <span class="outputLabelHelper">/ person</span>
+          </div>
+          <div>
+            <button class="buttonInputResult" onclick="resetValues()">RESET</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          Developed by <a href="https://github.com/slothbear-dxd/" target="_blank">Sloth Bear 🦥</a>
+        </p>
+        <p>
+          Design Credits -
+          <a
+            href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+            target="_blank"
+            >www.frontendmentor.io</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
